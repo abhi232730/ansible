@@ -1,0 +1,14 @@
+- name: Install Apache on web servers
+  hosts: Abhi9
+  become: yes
+
+  tasks:
+  - name: Install Apache
+    apt:
+      name: apache2
+      state: latest
+  - name: Apache enabled and running
+    service:
+      name: apache2
+      enabled: true
+      state: started
